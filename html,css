@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UX Case Study — Zomato (4-5 Page Report)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* ---------- Print-friendly page layout (4-5 pages) ---------- */
+    :root{
+      --bg:#F8FAFC; --card:#FFFFFF; --accent:#e54646; --accent-2:#F59E0B; --muted:#6B7280; --shadow: 0 8px 24px rgba(16,24,40,0.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#0F172A;background:var(--bg);}
+    .app{max-width:900px;margin:32px auto;padding:28px}
+    header.report-header{display:flex;gap:20px;align-items:center;margin-bottom:18px}
+    .logo{width:84px;height:84px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#e54646);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-family:Poppins}
+    .title h1{margin:0;font-family:Poppins;font-size:22px}
+    .meta{color:var(--muted);font-size:13px}
+
+    /* ---------- Page card (acts like each printed page) ---------- */
+    .page{background:var(--card);border-radius:14px;padding:22px;margin-bottom:18px;box-shadow:var(--shadow)}
+    h2{margin:0 0 10px 0;font-family:Poppins}
+    p.lead{color:var(--muted);margin-top:6px}
+
+    /* ---------- Grid / Content ---------- */
+    .two-col{display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:start}
+    .section{margin-top:18px}
+
+    /* ---------- Cards & Mockups ---------- */
+    .mockup{border-radius:12px;background:#111827;color:white;padding:12px;min-height:200px;display:flex;flex-direction:column;gap:10px}
+    .mockup .phone{width:100%;height:320px;border-radius:12px;background:linear-gradient(180deg,#111827,#0B1220);box-shadow:inset 0 4px 16px rgba(255,255,255,0.03);display:flex;flex-direction:column;padding:14px}
+    .mockup .screen{flex:1;border-radius:8px;background:url('https://source.unsplash.com/600x1000/?restaurant,food') center/cover no-repeat}
+    .img-thumb{width:100%;height:120px;border-radius:10px;object-fit:cover}
+
+    /* ---------- Feature list ---------- */
+    ul.features{padding-left:18px;color:#0F172A}
+
+    /* ---------- Buttons and small UI elements ---------- */
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:white;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+    .chip{display:inline-block;background:#F1F5F9;color:var(--muted);padding:6px 10px;border-radius:999px;font-size:13px;margin-right:8px}
+
+    /* ---------- Improvements mockups grid ---------- */
+    .improve-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .improve-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px;padding:12px;min-height:160px}
+    .mock-txt{font-size:13px;color:var(--muted)}
+
+    /* ---------- Footer ---------- */
+    footer{margin-top:12px;font-size:13px;color:var(--muted);text-align:center}
+
+    /* ---------- Print styles: page breaks so it prints 4-5 pages ---------- */
+    @media print{
+      body{background:white}
+      .app{max-width:720px;margin:0;padding:0}
+      .page{box-shadow:none;border-radius:0;margin:0;padding:18mm;height:287mm}
+      .page + .page{page-break-before:always}
+      header.report-header{page-break-inside:avoid}
+    }
+
+    /* Responsive */
+    @media (max-width:900px){.two-col{grid-template-columns:1fr}.app{padding:16px}.mockup .phone{height:240px}}
+  </style>
+</head>
+<body>
+  <div class="app">
+
+    <!-- Page 1: Title + Intro + User Journey -->
+    <div class="page">
+      <header class="report-header">
+        <div class="logo">ZS</div>
+        <div class="title">
+          <h1>UX Case Study — Zomato</h1>
+          <div class="meta">Author: Aish • Task: Internship — UX Case Study • Date: 30 Sep 2025</div>
+        </div>
+        <div style="margin-left:auto">
+          <button class="btn">Download PDF</button>
+        </div>
+      </header>
+
+      <section class="section">
+        <h2>1. Introduction</h2>
+        <p class="lead">Zomato is a leading food discovery and delivery platform. This case study analyzes the user journey, highlights strengths and weaknesses, and proposes 3 practical improvements with sample mockups.</p>
+      </section>
+
+      <section class="section two-col">
+        <div>
+          <h2>2. User Journey</h2>
+          <ol style="padding-left:18px;color:var(--muted)">
+            <li>Open App —> Home feed with recommendations.</li>
+            <li>Search / Filter —> Find by cuisine, rating, price.</li>
+            <li>Browse Menu —> Read reviews & view photos.</li>
+            <li>Add to Cart —> Customize items.</li>
+            <li>Checkout —> Address, payment, coupon.</li>
+            <li>Track Order —> Live map & ETA.</li>
+            <li>Feedback —> Rate delivery & food.</li>
+          </ol>
+        </div>
+        <aside>
+          <div class="card" style="background:var(--card);padding:12px;border-radius:12px;box-shadow:var(--shadow)">
+            <h3 style="margin:0">Key Personas</h3>
+            <div style="margin-top:10px">
+              <div class="chip">Busy Professional</div>
+              <div class="chip">Budget Student</div>
+              <div class="chip">Foodie</div>
+            </div>
+            <img class="img-thumb" src="zomato.jpg" alt="persona">
+          </div>
+        </aside>
+      </section>
+    </div>
+
+    <!-- Page 2: Strengths & Weaknesses -->
+    <div class="page">
+      <h2>3. Strengths</h2>
+      <ul class="features">
+        <li><strong>Powerful Search & Filters:</strong> Helps find restaurants quickly.</li>
+        <li><strong>Visual Menus:</strong> Photos and reviews build trust.</li>
+        <li><strong>Live Tracking:</strong> Real-time order updates reduce anxiety.</li>
+        <li><strong>Personalization:</strong> Relevant recommendations based on history.</li>
+      </ul>
+
+      <div class="section">
+        <h2>4. Weaknesses</h2>
+        <ul class="features">
+          <li><strong>Cluttered Home Screen:</strong> Many banners and promos reduce discoverability.</li>
+          <li><strong>Complex Checkout Flow:</strong> Manual coupon selection and address edits cause friction.</li>
+          <li><strong>Notification Noise:</strong> Frequent irrelevant promotions disturb users.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>5. Quick Data Snapshot</h2>
+        <p class="mock-txt">(Placeholder metrics for your report—replace with actual research/analytics)</p>
+        <div style="display:flex;gap:12px;margin-top:8px">
+          <div style="flex:1;background:#FEF3C7;padding:12px;border-radius:10px">Avg. Checkout Drop-off: <strong>18%</strong></div>
+          <div style="flex:1;background:#ECFDF5;padding:12px;border-radius:10px">Repeat Orders (30 days): <strong>42%</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 3: Improvements + Mockups -->
+    <div class="page">
+      <h2>6. Suggested Improvements (Top 3)</h2>
+      <div class="section improve-grid">
+        <div class="improve-card">
+          <h3 style="margin-top:0">Improvement 1: Simplified Home</h3>
+          <p class="mock-txt">Reduce banners; emphasize search + top picks. Move offers to a separate tab to declutter the primary flow.</p>
+          <div style="margin-top:8px" class="mockup">
+            <div class="phone">
+              <div style="height:46px;border-radius:8px;background:linear-gradient(90deg,#fff,rgba(255,255,255,0.02));display:flex;align-items:center;padding:8px;color:#111827">
+                <strong style="margin-left:8px">Search for restaurants or dishes</strong>
+              </div>
+              <div class="screen" style="margin-top:10px"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="improve-card">
+          <h3 style="margin-top:0">Improvement 2: Smart Checkout</h3>
+          <p class="mock-txt">Auto-apply best coupon and show a clean one-screen summary. Add "1-click reorder" for frequent orders.</p>
+          <div style="margin-top:8px;background:linear-gradient(180deg,#FFFFFF,#F8FAFC);padding:10px;border-radius:8px">
+            <strong>Order Summary</strong>
+            <div style="margin-top:8px;color:var(--muted)">Items: Paneer Butter Masala x1</div>
+            <div style="margin-top:6px;color:var(--muted)">Coupon: <strong>BEST20</strong> (applied)</div>
+            <div style="margin-top:10px"><button class="btn">Place Order — ₹299</button></div>
+          </div>
+        </div>
+
+        <div class="improve-card">
+          <h3 style="margin-top:0">Improvement 3: Smarter Notifications</h3>
+          <p class="mock-txt">Send intelligent, time-based notifications and add loyalty nudges (e.g., free delivery after N orders).</p>
+          <div style="margin-top:8px;background:#FEF3F2;padding:12px;border-radius:8px">
+            <div style="font-weight:600">🍽️ Dinner? 20% off at your favorite restaurant — today 7–9pm</div>
+            <div style="margin-top:8px;color:var(--muted)">Loyalty: 4/5 orders to free delivery</div>
+          </div>
+        </div>
+
+        <div class="improve-card">
+          <h3 style="margin-top:0">Sketches & Notes</h3>
+          <p class="mock-txt">Below are sample mockups you can use in your report. Replace placeholder images with high-fidelity screens from Figma/Adobe XD.</p>
+          <img class="img-thumb" src="mockup.jpg" alt="mockup">
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Page 4: Implementation Plan + Conclusion -->
+    <div class="page">
+      <h2>7. Implementation Plan</h2>
+      <ol style="color:var(--muted)">
+        <li>Prototype new home & checkout flows in Figma — 1 week.</li>
+        <li>Run usability test with 8–10 participants — 1 week.</li>
+        <li>Iterate and implement A/B test (control vs simplified home) — 2–3 weeks.</li>
+        <li>Roll out & monitor metrics (checkout drop-off, order rate) — ongoing.</li>
+      </ol>
+
+      <div class="section">
+        <h2>8. Conclusion</h2>
+        <p class="lead">Focusing on decluttering the main experience, reducing friction during checkout, and delivering smarter, contextual notifications can increase conversion and user satisfaction for Zomato.</p>
+      </div>
+
+      <footer>Prepared by Aish • UX Case Study — Zomato • 4-page printable layout</footer>
+    </div>
+
+  </div>
+
+  <script>
+    // Quick helper: Download printable PDF using browser print. The download button triggers print.
+    document.querySelector('.btn')?.addEventListener('click', function(){
+      window.print();
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
